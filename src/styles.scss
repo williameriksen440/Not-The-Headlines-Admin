@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('/assets/fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lato-Light';
+  src: url('/assets/fonts/Lato/Lato-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Lato-Black';
+  src: url('/assets/fonts/Lato/Lato-Black.ttf');
+}
+
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url('/assets/fonts/Lato/Lato-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Lato-Semi-Bold';
+  src: url('/assets/fonts/Lato/Lato-Semibold.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans_Regular';
+  src: url('/assets/fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'BrandonText-Regular';
+  src: url("/assets/fonts/HVD Fonts - BrandonText-Regular.otf");
+}
+
+@font-face {
+  font-family: 'BrandonText-RegularItalic';
+  src: url("/assets/fonts/HVD Fonts - BrandonText-RegularItalic.otf");
+}
+
+@font-face {
+  font-family: 'BrandonText-Bold';
+  src: url("/assets/fonts/HVD Fonts - BrandonText-Bold.otf");
+}
+
+span, p {
+  font-family: 'Lato-Regular', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.92;
+  letter-spacing: 1.4px;
+  text-align: left;
+}
+
+.content {
+  width: 87%;
+  margin: 0 auto;
+}
+
+.mat-form-field-label-wrapper {
+  top: 0 !important;
+}
