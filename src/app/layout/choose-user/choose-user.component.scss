@@ -1,0 +1,12 @@
+.choose_content {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    color: white;
+    background: lightgray;
+    text-transform: uppercase;
+    font-family: 'BrandonText-Regular';
+    font-size: 20px;
+  }
+}

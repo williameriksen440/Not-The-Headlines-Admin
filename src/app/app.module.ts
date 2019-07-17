@@ -10,7 +10,8 @@ import {FacebookLoginComponent} from './Auth/facebook-login/facebook-login.compo
 import {MatFormFieldModule, MatSelectModule, MatInputModule, MatButtonModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
-import { HeaderComponent } from './Auth/layout/header/header.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { ChooseUserComponent } from './layout/choose-user/choose-user.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeaderComponent } from './Auth/layout/header/header.component';
     AdminComponent,
     ComplaintsComponent,
     FacebookLoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    ChooseUserComponent
   ],
   imports: [
     BrowserModule,
