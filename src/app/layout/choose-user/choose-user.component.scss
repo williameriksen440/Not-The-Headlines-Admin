@@ -1,12 +1,22 @@
 .choose_content {
   display: flex;
   flex-direction: column;
+  margin-top: 80px;
 
-  button {
+  a {
     color: white;
     background: lightgray;
     text-transform: uppercase;
     font-family: 'BrandonText-Regular';
     font-size: 20px;
+    width: 19%;
+    margin: 20px auto;
+    border-radius: 9px;
+    border: unset;
+    padding: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
   }
 }

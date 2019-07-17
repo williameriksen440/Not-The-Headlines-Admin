@@ -163,7 +163,7 @@
       margin-bottom: 25px;
       border-radius: 5px;
       height: 39px;
-
+      cursor: pointer;
 
       .mat-button-wrapper {
         font-size: 16px !important;
@@ -228,6 +228,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    cursor: pointer;
 
     span {
       font-size: 16px;
