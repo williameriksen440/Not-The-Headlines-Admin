@@ -1,12 +1,12 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {LoginComponent} from './Auth/login/login.component';
-import {RegisterComponent} from './Auth/register/register.component';
-import {AdminComponent} from './Auth/admin/admin.component';
-import {ComplaintsComponent} from './Auth/complaints/complaints.component';
+import {LoginComponent} from './auth/login/login.component';
+import {RegisterComponent} from './auth/register/register.component';
+import {AdminComponent} from './admin/admin/admin.component';
+import {ComplaintsComponent} from './auth/complaints/complaints.component';
 import {AppRoutingModule} from './app-routing.module';
-import {FacebookLoginComponent} from './Auth/facebook-login/facebook-login.component';
+import {FacebookLoginComponent} from './auth/facebook-login/facebook-login.component';
 import {
   MatFormFieldModule,
   MatSelectModule,
@@ -23,11 +23,8 @@ import {ChooseUserComponent} from './layout/choose-user/choose-user.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
     AdminComponent,
     ComplaintsComponent,
-    FacebookLoginComponent,
     HeaderComponent,
     ChooseUserComponent
   ],
