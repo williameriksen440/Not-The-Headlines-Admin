@@ -43,7 +43,7 @@ th, td {
 }
 
 .posts_table {
-  div {
+  div.post_sort {
     display: flex;
     justify-content: space-between;
   }
@@ -92,5 +92,16 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
 .admin_page_actions {
   ul {
     margin: 100px 0;
+  }
+}
+
+.sort{
+  display: flex;
+
+  h6{
+    font-size: 20px;
+    font-family: 'Lato-Regular';
+    color: black;
+    margin: 28px;
   }
 }

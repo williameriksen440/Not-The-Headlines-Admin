@@ -6,11 +6,11 @@
       <h3>Admin</h3>
 
       <div class="search_box">
-          <form class="example-form">
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Search">
-            </mat-form-field>
-          </form>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Search">
+          </mat-form-field>
+        </form>
       </div>
 
       <div class="table_box">
@@ -70,16 +70,23 @@
       <div class="posts_table">
 
         <div>
-          <h3>Posts</h3>
-          <mat-form-field>
-<!--            <mat-label>Select an option</mat-label>-->
-            <mat-select [(value)]="selected">
-              <mat-option>None</mat-option>
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <div class="post_sort">
+
+            <h3>Posts</h3>
+
+            <div class="sort">
+              <h6>Sort</h6>
+              <mat-form-field>
+                <!--            <mat-label>Select an option</mat-label>-->
+                <mat-select [(value)]="selected">
+                  <mat-option>None</mat-option>
+                  <mat-option value="option1">Option 1</mat-option>
+                  <mat-option value="option2">Option 2</mat-option>
+                  <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
         </div>
 
         <div class="table_wrapper">
