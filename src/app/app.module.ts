@@ -7,11 +7,18 @@ import {AdminComponent} from './Auth/admin/admin.component';
 import {ComplaintsComponent} from './Auth/complaints/complaints.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FacebookLoginComponent} from './Auth/facebook-login/facebook-login.component';
-import {MatFormFieldModule, MatSelectModule, MatInputModule, MatButtonModule} from '@angular/material';
+import {
+  MatFormFieldModule,
+  MatSelectModule,
+  MatInputModule,
+  MatButtonModule,
+  ErrorStateMatcher,
+  ShowOnDirtyErrorStateMatcher, MatTableModule, MatCheckboxModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
-import { HeaderComponent } from './layout/header/header.component';
-import { ChooseUserComponent } from './layout/choose-user/choose-user.component';
+import {HeaderComponent} from './layout/header/header.component';
+import {ChooseUserComponent} from './layout/choose-user/choose-user.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +39,13 @@ import { ChooseUserComponent } from './layout/choose-user/choose-user.component'
     MatInputModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatCheckboxModule
   ],
-  providers: [],
+  providers: [{
+    provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
