@@ -4,9 +4,19 @@
             <img src="../../../../assets/images/logo_white_background.jpg" alt="">
 
         </div>
-        <div class="logoutContainer">
-            <span *ngIf="!auth.loggedIn()" (click)="router.navigate(['auth/login'])">Log in</span>
-            <span *ngIf="auth.loggedIn()" (click)="logout()">Logout</span>
+        <div class="authContainer">
+
+            <!-- Logout link for authenticated users -->
+            <div *ngIf="auth.loggedIn(); else nonAuthBlock">
+                <span (click)="logout()">Logout</span>
+            </div>
+
+            <!-- Non-authenticated user links -->
+            <ng-template #nonAuthBlock>
+                <p (click)="router.navigate(['auth/login'])">Log in</p>
+                <p (click)="router.navigate(['auth/register'])">Register</p>
+
+            </ng-template>
         </div>
     </div>
 </div>

@@ -2,6 +2,17 @@
 // regular style toast
 @import '~ngx-toastr/toastr';
 
+.toast-success.ngx-toastr.ng-trigger.ng-trigger-flyInOut {
+  width: auto !important;
+  min-width: auto;
+}
+
+.toast-success.ngx-toastr.ng-trigger.ng-trigger-flyInOut .toast-message {
+  width: auto !important;
+  min-width: auto;
+}
+
+
 @font-face {
   font-family: 'Lato-Regular';
   src: url('/assets/fonts/Lato/Lato-Regular.ttf');
