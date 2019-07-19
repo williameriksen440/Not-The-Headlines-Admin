@@ -1,4 +1,6 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+// regular style toast
+@import '~ngx-toastr/toastr';
 
 @font-face {
   font-family: 'Lato-Regular';
@@ -119,8 +121,8 @@ table.mat-elevation-z8.mat-table {
   }
 }
 
-.posts_table{
-  .mat-select{
+.posts_table {
+  .mat-select {
     position: absolute;
     left: 0;
     box-sizing: content-box;
@@ -130,7 +132,8 @@ table.mat-elevation-z8.mat-table {
     border: 1px solid lightgray;
     border-radius: 10px;
   }
-  .mat-select-trigger{
+
+  .mat-select-trigger {
     padding: 10px;
   }
 }

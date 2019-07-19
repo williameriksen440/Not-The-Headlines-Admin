@@ -2,9 +2,21 @@
   border-bottom: 1px solid #e14040;
   padding: 15px 0;
 
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .page_logo {
     img {
       width: 140px;
+    }
+  }
+  .logoutContainer{
+    display: flex;
+    align-items: center;
+    span{
+      cursor: pointer;
     }
   }
 }

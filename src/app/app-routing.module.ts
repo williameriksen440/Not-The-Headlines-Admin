@@ -5,14 +5,21 @@ import {RegisterComponent} from './auth/register/register.component';
 import {AdminComponent} from './admin/admin/admin.component';
 import {ComplaintsComponent} from './auth/complaints/complaints.component';
 import {ChooseUserComponent} from './layout/choose-user/choose-user.component';
+import {HomeComponent} from './auth/home/home.component';
 
 
 const routes: Routes = [
-    {path: 'auth', loadChildren: './auth/auth.module#AuthModule'},
-
+    {
+        path: '',
+        component: HomeComponent
+    },
+    {
+        path: 'auth',
+        loadChildren: './auth/auth.module#AuthModule'
+    },
     {
         path: 'admin',
-        component: AdminComponent
+        loadChildren: './admin/admin.module#AdminModule'
     },
     {
         path: 'complaints',
