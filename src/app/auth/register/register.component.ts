@@ -18,4 +18,8 @@ export class RegisterComponent implements OnInit {
         this.registerForm = this.fb.group({});
     }
 
+    register() {
+
+    }
+
 }

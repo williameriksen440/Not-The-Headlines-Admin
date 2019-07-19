@@ -8,14 +8,13 @@
 
             <!-- Logout link for authenticated users -->
             <div *ngIf="auth.loggedIn(); else nonAuthBlock">
-                <span (click)="logout()">Logout</span>
+                <p (click)="logout()">Logout</p>
             </div>
 
             <!-- Non-authenticated user links -->
             <ng-template #nonAuthBlock>
                 <p (click)="router.navigate(['auth/login'])">Log in</p>
                 <p (click)="router.navigate(['auth/register'])">Register</p>
-
             </ng-template>
         </div>
     </div>

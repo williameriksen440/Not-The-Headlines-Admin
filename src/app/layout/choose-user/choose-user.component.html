@@ -1,7 +1,7 @@
 <div class="content">
-  <app-header></app-header>
-  <div class="choose_content">
-    <a routerLink="/admin">Admin</a>
-    <a routerLink="/complaints">Complaints</a>
-  </div>
+    <app-header></app-header>
+    <div class="choose_content">
+        <a (click)="router.navigate(['/admin'])">Admin</a>
+        <a (click)="router.navigate(['/complaints'])">Complaints</a>
+    </div>
 </div>
