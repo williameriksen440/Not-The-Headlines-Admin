@@ -23,6 +23,7 @@ import {JwtHelperService} from '@auth0/angular-jwt';
 import {JwtModule} from '@auth0/angular-jwt';
 import {AdminModule} from './admin/admin.module';
 import {GetTableDataSourcePipe} from './shared/pipes/get-table-data-source.pipe';
+import {NotFoundComponent} from './auth/not-found/not-found.component';
 
 
 // Token getter for JWT module
@@ -33,7 +34,8 @@ export function tokenGetter() {
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        NotFoundComponent
     ],
     imports: [
         BrowserModule,

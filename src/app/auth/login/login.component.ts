@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     login() {
         if (this.loginForm.valid) {
             this.auth.login(this.loginForm.value).subscribe((dt: any) => {
-                this.router.navigate(['choose']);
+                this.router.navigate(['admin/choose']);
                 localStorage.setItem('token', dt.token);
             });
         }

@@ -6,6 +6,8 @@ import {AdminComponent} from './admin/admin/admin.component';
 import {ComplaintsComponent} from './admin/complaints/complaints.component';
 import {ChooseUserComponent} from './layout/choose-user/choose-user.component';
 import {HomeComponent} from './auth/home/home.component';
+import {AuthGuard} from './shared/guards/auth.guard';
+import {NotFoundComponent} from './auth/not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -19,16 +21,10 @@ const routes: Routes = [
     },
     {
         path: 'admin',
-        loadChildren: './admin/admin.module#AdminModule'
+        loadChildren: './admin/admin.module#AdminModule',
+        canActivate: [AuthGuard]
     },
-    {
-        path: 'complaints',
-        component: ComplaintsComponent
-    },
-    {
-        path: 'choose',
-        component: ChooseUserComponent
-    }
+    {path: '**', component: NotFoundComponent},
 ];
 
 @NgModule({
