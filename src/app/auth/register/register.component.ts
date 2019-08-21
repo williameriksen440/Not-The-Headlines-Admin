@@ -15,11 +15,11 @@ export class RegisterComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.registerForm = this.fb.group({});
-    }
-
-    register() {
-
+        this.registerForm = this.fb.group({
+            email: [''],
+            full_name: [''],
+            password: [''],
+        });
     }
 
 }

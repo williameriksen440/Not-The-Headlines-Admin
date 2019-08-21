@@ -14,7 +14,7 @@
             <!-- Non-authenticated user links -->
             <ng-template #nonAuthBlock>
                 <p (click)="router.navigate(['auth/login'])">Log in</p>
-                <p (click)="router.navigate(['auth/register'])">Register</p>
+                <p (click)="router.navigate(['auth/register'])" [hidden]="true">Register</p>
             </ng-template>
         </div>
     </div>
