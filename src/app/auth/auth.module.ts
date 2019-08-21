@@ -6,7 +6,7 @@ import {SharedModule} from '../shared/shared.module';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {AdminComponent} from '../admin/admin/admin.component';
-import {ComplaintsComponent} from './complaints/complaints.component';
+import {ComplaintsComponent} from '../admin/complaints/complaints.component';
 import {FacebookLoginComponent} from './facebook-login/facebook-login.component';
 import {LayoutModule} from '../layout/layout.module';
 

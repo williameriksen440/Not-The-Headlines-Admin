@@ -1,0 +1,21 @@
+<div class="content">
+    <app-header></app-header>
+    <div class="complaints">
+        <h3>Complaints</h3>
+<!--        <ul>-->
+<!--            <li>-->
+<!--                <h4>Date</h4>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <h4>Username</h4>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <h4>Post</h4>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <h4>Comments</h4>-->
+<!--            </li>-->
+<!--        </ul>-->
+        <app-mat-table [cols]="columns" [dataObs]="complaints"></app-mat-table>
+    </div>
+</div>

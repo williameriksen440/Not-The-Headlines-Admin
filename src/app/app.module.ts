@@ -4,7 +4,6 @@ import {AppComponent} from './app.component';
 import {LoginComponent} from './auth/login/login.component';
 import {RegisterComponent} from './auth/register/register.component';
 import {AdminComponent} from './admin/admin/admin.component';
-import {ComplaintsComponent} from './auth/complaints/complaints.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FacebookLoginComponent} from './auth/facebook-login/facebook-login.component';
 import {
@@ -22,6 +21,8 @@ import {LayoutModule} from './layout/layout.module';
 import {HomeComponent} from './auth/home/home.component';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {JwtModule} from '@auth0/angular-jwt';
+import {AdminModule} from './admin/admin.module';
+import {GetTableDataSourcePipe} from './shared/pipes/get-table-data-source.pipe';
 
 
 // Token getter for JWT module
@@ -32,7 +33,6 @@ export function tokenGetter() {
 @NgModule({
     declarations: [
         AppComponent,
-        ComplaintsComponent,
         HomeComponent
     ],
     imports: [
@@ -40,6 +40,7 @@ export function tokenGetter() {
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,
+        AdminModule,
         FormsModule,
         LayoutModule,
         ToastrModule.forRoot({
@@ -61,7 +62,8 @@ export function tokenGetter() {
             useClass: RequestInterceptor,
             multi: true
         },
-        JwtHelperService
+        JwtHelperService,
+        GetTableDataSourcePipe
     ],
     bootstrap: [AppComponent]
 })
