@@ -12,8 +12,16 @@ export class ComplaintsService {
     ) {
     }
 
-    get() {
-        return this.http.get(`${API_URL}api/complaints/get`);
+    get(data) {
+        return this.http.get(`${API_URL}api/general/reports`, {params: data});
+    }
+
+    approve(id, status) {
+        return this.http.put(`${API_URL}api/general/reports/${id}`, {status});
+    }
+
+    decline(id, status) {
+        return this.http.put(`${API_URL}api/general/reports/${id}`, {status});
     }
 
 

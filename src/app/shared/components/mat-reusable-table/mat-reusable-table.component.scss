@@ -1,11 +1,3 @@
-.allFerryContent {
-  width: 71%;
-  margin: 0 auto;
-  display: block;
-  //float: right;
-  //margin-right: 9%;
-}
-
 .mat-form-field {
   font-size: 14px;
   width: 100%;
@@ -15,11 +7,17 @@
 
 }
 
+.mainContent {
+  max-width: 100%;
+  width: 50%;
+  margin: auto;
+}
+
 .flex_container {
   display: flex;
 }
 
-.tableContainer{
+.tableContainer {
 
 }
 
@@ -34,19 +32,17 @@
 }
 
 @media screen and (max-width: 880px) {
-  .allFerryContent {
-    //width: 67%;
-    //display: inline-block;
-    //margin-left: 3%;
-    //margin-right: 3%;
-  }
+
 }
-@media(max-width: 767px){
-  .allFerryContent {
-    width: 100%;
-    display: block;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0;
-  }
+
+@media(max-width: 767px) {
+
+}
+
+.approveBtn {
+  color: #51a351;
+}
+
+.rejectBtn {
+  color: #e14040;
 }

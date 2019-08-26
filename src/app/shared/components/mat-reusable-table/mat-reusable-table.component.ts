@@ -7,6 +7,8 @@ import {Router} from '@angular/router';
 import {Subscription} from 'rxjs/internal/Subscription';
 import {ToastrService} from 'ngx-toastr';
 import {AuthService} from '../../services/auth.service';
+import {ComplaintsService} from '../../services/complaints.service';
+import {SubjectService} from '../../services/subject.service';
 
 @Component({
     selector: 'app-mat-table',
@@ -15,9 +17,9 @@ import {AuthService} from '../../services/auth.service';
 })
 export class MatReusableTableComponent implements OnInit, OnDestroy {
 
-    @Input() dataObs;
+    @Input() data;
     @Input() cols;
-    // @Input() item;
+    @Input() item;
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
     @ViewChild(MatSort) sort: MatSort;
@@ -28,13 +30,16 @@ export class MatReusableTableComponent implements OnInit, OnDestroy {
     dataSource;
     filteredData;
     subscriptions: Subscription[] = [];
+    allResults = true;
 
     constructor(
         private dataSrc: GetTableDataSourcePipe,
         private dialog: MatDialog,
         public router: Router,
         private toastr: ToastrService,
-        public auth: AuthService
+        public auth: AuthService,
+        private complaintsService: ComplaintsService,
+        private subject: SubjectService
     ) {
     }
 
@@ -42,17 +47,22 @@ export class MatReusableTableComponent implements OnInit, OnDestroy {
 
         // this.item = this.item.replace(/_/g, '-');
         this.displayedColumns = this.cols;
-        this.getData(this.dataObs);
+        this.getData(this.data);
+
+        this.subject.getTableData().subscribe(dt => {
+            this.getData(dt);
+            this.allResults = false;
+        });
     }
 
-    getData(dataObs, remove = false) {
+    getData(dt, remove = false) {
 
+        console.log(dt);
+        if (dt && dt.hasOwnProperty('reports')) {
+            dt = dt['reports'];
+        }
 
-        this.subscriptions.push(dataObs.subscribe(dt => {
-            if (dt.hasOwnProperty('result')) {
-                dt = dt['result'];
-            }
-
+        if (dt) {
             // Saving data with sorting and pagination
             this.dataSource = this.dataSrc.transform(dt);
             this.dataSource.sort = this.sort;
@@ -78,8 +88,9 @@ export class MatReusableTableComponent implements OnInit, OnDestroy {
                 return data[sortHeaderId];
             };
 
+        }
 
-        }));
+
     }
 
     /**
@@ -87,11 +98,13 @@ export class MatReusableTableComponent implements OnInit, OnDestroy {
      * @param filterValue search term for filtering table values
      */
     applyFilter(filterValue: string) {
+        console.log(filterValue);
         this.dataSource.filter = filterValue.trim().toLowerCase();
 
         if (this.dataSource.paginator) {
             this.dataSource.paginator.firstPage();
         }
+        console.log(this.dataSource.filteredData);
         this.filteredData = this.dataSource.filteredData;
         // console.log(this.dataSource)
     }
@@ -123,6 +136,15 @@ export class MatReusableTableComponent implements OnInit, OnDestroy {
                 // }
             }
         ));
+    }
+
+
+    approve(r) {
+        this.subscriptions.push(this.complaintsService.approve(r._id, 'Approved').subscribe());
+    }
+
+    decline(r) {
+        this.subscriptions.push(this.complaintsService.approve(r._id, 'Declined').subscribe());
     }
 
     ngOnDestroy() {

@@ -33,3 +33,12 @@
     }
   }
 }
+
+.reportTypes {
+  display: flex;
+  justify-content: center;
+
+  mat-radio-button {
+    margin-left: 20px;
+  }
+}
