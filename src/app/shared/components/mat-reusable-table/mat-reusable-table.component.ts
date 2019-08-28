@@ -57,7 +57,6 @@ export class MatReusableTableComponent implements OnInit, OnDestroy {
 
     getData(dt, remove = false) {
 
-        console.log(dt);
         if (dt && dt.hasOwnProperty('reports')) {
             dt = dt['reports'];
         }
@@ -140,11 +139,15 @@ export class MatReusableTableComponent implements OnInit, OnDestroy {
 
 
     approve(r) {
-        this.subscriptions.push(this.complaintsService.approve(r._id, 'Approved').subscribe());
+        this.subscriptions.push(this.complaintsService.approve(r._id, 'Approved').subscribe((d: any) => {
+            this.toastr.success(d.message);
+        }));
     }
 
     decline(r) {
-        this.subscriptions.push(this.complaintsService.approve(r._id, 'Declined').subscribe());
+        this.subscriptions.push(this.complaintsService.approve(r._id, 'Declined').subscribe((d: any) => {
+            this.toastr.success(d.message);
+        }));
     }
 
     ngOnDestroy() {

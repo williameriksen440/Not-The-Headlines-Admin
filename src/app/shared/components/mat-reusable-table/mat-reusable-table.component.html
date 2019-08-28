@@ -16,7 +16,7 @@
                         <ng-container [matColumnDef]="col" *ngIf="col!='actions'">
                             <th mat-header-cell *matHeaderCellDef mat-sort-header> {{normalizeColName(col)}}</th>
                             <td mat-cell *matCellDef="let row">
-                                <span *ngIf="col=='status'">{{row[col]}}</span>
+                                <span *ngIf="col==='status' || col==='type'">{{row[col]}}</span>
                                 <ng-container *ngIf="row['newsId']">
                                     <a [href]="row['newsId'][col]"
                                        *ngIf="col==='link'">{{row['newsId'][col]|getUrlBase}}</a>

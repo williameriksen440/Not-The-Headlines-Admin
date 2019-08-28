@@ -10,7 +10,7 @@ import {SubjectService} from '../../shared/services/subject.service';
 })
 export class ComplaintsComponent implements OnInit {
 
-    columns = ['extractedTitle', 'link', 'actions'];
+    columns = ['extractedTitle', 'link', 'category', 'type', 'actions'];
     complaints;
 
     constructor(
