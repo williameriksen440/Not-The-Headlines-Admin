@@ -30,7 +30,7 @@ export class ComplaintsComponent implements OnInit {
     getComplaints(params) {
         this.complaintsService.get(params).subscribe(dt => {
             this.complaints = dt;
-            this.subject.setTableData(dt);
+            this.subject.setTableData({data: dt, type: params.type});
         });
     }
 

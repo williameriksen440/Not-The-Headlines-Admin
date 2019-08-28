@@ -50,8 +50,8 @@ export class MatReusableTableComponent implements OnInit, OnDestroy {
         this.getData(this.data);
 
         this.subject.getTableData().subscribe(dt => {
-            this.getData(dt);
-            this.allResults = false;
+            this.getData(dt.data);
+            this.allResults = !dt.type;
         });
     }
 
