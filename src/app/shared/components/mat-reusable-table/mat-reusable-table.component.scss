@@ -18,7 +18,11 @@
 }
 
 .tableContainer {
-
+  .mat-cell {
+    span {
+      font-size: 14px;
+    }
+  }
 }
 
 .table_responsive {
