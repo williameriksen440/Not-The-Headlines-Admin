@@ -31,6 +31,7 @@ export class MatReusableTableComponent implements OnInit, OnDestroy {
     filteredData;
     subscriptions: Subscription[] = [];
     allResults = true;
+    selectedReportsType = 'All';
 
     constructor(
         private dataSrc: GetTableDataSourcePipe,
@@ -52,6 +53,7 @@ export class MatReusableTableComponent implements OnInit, OnDestroy {
         this.subject.getTableData().subscribe(dt => {
             this.getData(dt.data);
             this.allResults = !dt.type;
+            this.selectedReportsType = dt.type;
         });
     }
 
@@ -140,13 +142,21 @@ export class MatReusableTableComponent implements OnInit, OnDestroy {
 
     approve(r) {
         this.subscriptions.push(this.complaintsService.approve(r._id, 'Approved').subscribe((d: any) => {
-            this.toastr.success(d.message);
+            this.complaintsService.get(this.selectedReportsType ? {type: this.selectedReportsType} : {}).subscribe(dt => {
+                this.toastr.success(d.message);
+                this.data = dt;
+                this.getData(dt);
+            });
         }));
     }
 
     decline(r) {
         this.subscriptions.push(this.complaintsService.approve(r._id, 'Declined').subscribe((d: any) => {
-            this.toastr.success(d.message);
+            this.complaintsService.get(this.selectedReportsType ? {type: this.selectedReportsType} : {}).subscribe(dt => {
+                this.toastr.success(d.message);
+                this.data = dt;
+                this.getData(dt);
+            });
         }));
     }
 

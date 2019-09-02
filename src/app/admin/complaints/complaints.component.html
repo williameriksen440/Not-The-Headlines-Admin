@@ -3,13 +3,13 @@
     <div class="complaints">
         <h3>Complaints</h3>
 
-        <div class="reportTypes">
-            <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="1" (change)="changeComplaintsType('')" [checked]="true">All</mat-radio-button>
-                <mat-radio-button value="2" (change)="changeComplaintsType('Accepted')">Accepted</mat-radio-button>
-                <mat-radio-button value="3" (change)="changeComplaintsType('Rejected')">Rejected</mat-radio-button>
-            </mat-radio-group>
-        </div>
+<!--        <div class="reportTypes">-->
+<!--            <mat-radio-group aria-label="Select an option">-->
+<!--                <mat-radio-button value="1" [checked]="true">All</mat-radio-button>-->
+<!--                <mat-radio-button value="2">Accepted</mat-radio-button>-->
+<!--                <mat-radio-button value="3">Rejected</mat-radio-button>-->
+<!--            </mat-radio-group>-->
+<!--        </div>-->
 
         <app-mat-table *ngIf="complaints" [cols]="columns" [data]="complaints"
                        [item]="'complaints'"></app-mat-table>

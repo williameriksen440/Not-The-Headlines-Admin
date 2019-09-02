@@ -23,9 +23,9 @@ export class ComplaintsComponent implements OnInit {
         this.getComplaints({});
     }
 
-    changeComplaintsType(type) {
-        this.getComplaints(type ? {type} : {});
-    }
+    // changeComplaintsType(type) {
+    //     this.getComplaints(type ? {type} : {});
+    // }
 
     getComplaints(params) {
         this.complaintsService.get(params).subscribe(dt => {
